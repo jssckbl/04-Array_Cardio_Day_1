@@ -86,6 +86,16 @@
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    const category = document.querySelector('.mw-category');
+    // const links = [...category.querySelectorAll('a')]; <---- this is one option
+    const links = Array.from(category.querySelectorAll('a')); // this is a bit more readable for this assignment
+    // convert list of links to list of names
+    const de = links
+                .map(link => link.textContent)
+    // filter list of names to whatever contains 'de'
+                .filter(streetName => streetName.includes('de'));
+    // note that the code number 6 may throw an error if you try to run it more than once without refreshing
+
 
 
     // 7. sort Exercise
