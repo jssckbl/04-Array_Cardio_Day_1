@@ -122,10 +122,22 @@
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
     const transportation = data.reduce(function(obj, item){
+      // code below checks to see if an item exists
+      if (!obj[item]){
+        obj[item] = 0;
+      }
+      // if item exists, increment by 1
+      obj[item]++;
+      return obj;
 
+    }, {
+      // car: 0, 
+      // walk: 0,
+      // truck: 0
     });
+    console.log(transportation);
 
 
   </script>
 </body>
-</html>
+</html> 
